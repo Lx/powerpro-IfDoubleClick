@@ -1,5 +1,5 @@
-; IfDoubleClick v1.0
-; Written by Alex Peters, 19/8/2003
+; IfDoubleClick v1.1
+; Written by Alex Peters, 20/8/2003
 ; ______________________________________________________________________
 ;
 ; This is the default double-click timeout, i.e. the time (in
@@ -13,9 +13,9 @@ Local DblClickTimeout = 500
 
 If(Arg(1) == "") Do
     MessageBox("Information", '+
-        "IfCoubleClick v1.0'r'nWritten by Alex Peters, 19/8/2003'r'n" '+
+        "IfDoubleClick v1.0'r'nWritten by Alex Peters, 19/8/2003'r'n" '+
      ++ "'r'nUsage:'r'n.IfDoubleClick(OnDoubleClick[, OnSingleClick]" '+
-     ++ "[, DblClickTimeout])")
+     ++ "[, DblClickTimeout])", "IfDoubleClick Script")
     Quit
 EndIf
 
