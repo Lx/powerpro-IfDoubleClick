@@ -1,8 +1,8 @@
 ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
 IfDoubleClick
 ¯¯¯¯¯¯¯¯¯¯¯¯¯
-Version 2.0
-Wednesday, 10 September 2003
+Version 2.1
+Sunday, 21 September 2003
 ________________________________________________________________________
 
 What?
@@ -11,6 +11,10 @@ The IfDoubleClick script enables you to add double-click functionality
 to bar buttons, system tray icons, hotkeys, or any other event that you
 have defined in your PowerPro configuration. This allows you to give
 your bar buttons etc. twice as much functionality than without it.
+
+For example, you could set up the Win+C key combination to be able to
+launch either Calculator, or the Command Prompt. (Please refer to the
+Usage section if you're interested.)
 
 You can also use the IfDoubleClick script to have certain bar buttons
 etc. ignore any accidental double-clicks, which may be handy if you find
@@ -58,6 +62,16 @@ of the first click, or 500 milliseconds by default).
 The default time for the double-click timeout can be modified if you
 prefer a faster or slower timeout. This is done by modifying the line in
 the script itself, that defines the DblClickTimeout variable.
+
+For example, to set up the Win+C key combination to be able to launch
+either Calculator or the Command Prompt, you could assign this command
+to the key combination in your Key/Mouse settings:
+
+.IfDoubleClick("Cmd", "Calc")
+
+Then, after saving your configuration, you will be able to use the Win+C
+combination to launch Calculator, and Win+CC to launch the Command
+Prompt. (This is actually a combination I use!)
 ________________________________________________________________________
 
 To Conclude
@@ -81,6 +95,14 @@ ________________________________________________________________________
 
 Version History
 ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+v2.1 (21/9/2003)
+* Script:
+  * The script no longer references its filename, so the script file can
+    now be renamed without problems
+  * Small optimisation to the way the event is killed
+* Documentation:
+  * Added Win+C and Win+CC examples
+
 v2.0 (10/9/2003)
 * Script:
   * Complete rewrite

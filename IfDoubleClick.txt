@@ -1,6 +1,6 @@
 ; ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
-; IfDoubleClick v2.0
-; Written by Alex Peters, 10/9/2003
+; IfDoubleClick v2.1
+; Written by Alex Peters, 21/9/2003
 ; ______________________________________________________________________
 
 ; Unless a time is passed with the script call, we will assume that a
@@ -14,35 +14,32 @@
 ; No user-serviceable parts follow! :-)
 ; ______________________________________________________________________
 
-    Static Event
-    Static OnSingleClick = ""
+    Static Event, OnSingleClick = ""
 
     If(Arg(3))
         DblClickTimeout = Arg(3)
 
     If(Arg(1)) Do
         If(Event) Do
-            Event.Destroy(Event)
-            Event = 0
+            Event = Event.Destroy(Event)
             Do(Arg(1), "")
         Else
             OnSingleClick = Arg(2)
-            Event = Event.CreateMS(DblClickTimeout, 1, '+
-                ".IfDoubleClick@Event")
+            Event = Event.CreateMS(DblClickTimeout, 1, "." ++ '+
+                ScriptName ++ "@Event")
         EndIf
     Else
         If(Arg(2)) Do
             If(Event) Do
-                Event.Destroy(Event)
-                Event = 0
+                Event = Event.Destroy(Event)
                 Quit
             EndIf
-            Event = Event.CreateMS(DblClickTimeout, 1, '+
-                ".IfDoubleClick@Event")
+            Event = Event.CreateMS(DblClickTimeout, 1, "." ++ '+
+                ScriptName ++ "@Event")
             Do(Arg(2), "")
         Else
-            Local Message = "IfDoubleClick v2.0'r'nWritten by Alex P" '+
-                ++ "eters, 10/9/2003'r'n'r'nUsage:'r'n.IfDoubleClick" '+
+            Local Message = "IfDoubleClick v2.1'r'nWritten by Alex P" '+
+                ++ "eters, 21/9/2003'r'n'r'nUsage:'r'n.IfDoubleClick" '+
                 ++ "(OnDoubleClick, OnSingleClick[, DblClickTimeout]" '+
                 ++ ")'r'n'r'nSpecify both a double- and single-click" '+
                 ++ " command to give your bar button, tray icon, hot" '+
@@ -61,7 +58,7 @@
                 ++ "y second click within DblClickTimeout of the fir" '+
                 ++ "st click, or " ++ DblClickTimeout ++ " milliseco" '+
                 ++ "nds by default)."
-            MessageBox("Information", Message, "IfDoubleClick v2.0")
+            MessageBox("Information", Message, "IfDoubleClick v2.1")
         EndIf
     EndIf
 
