@@ -1,0 +1,33 @@
+; IfDoubleClick v1.0
+; Written by Alex Peters, 19/8/2003
+; ______________________________________________________________________
+;
+; This is the default double-click timeout, i.e. the time (in
+; milliseconds) to wait for another click, before assuming a single-
+; click. If a timeout isn't passed to the script, this value will be
+; used.
+
+Local DblClickTimeout = 500
+
+; The rest of the script isn't too interesting! :-)
+
+If(Arg(1) == "") Do
+    MessageBox("Information", '+
+        "IfCoubleClick v1.0'r'nWritten by Alex Peters, 19/8/2003'r'n" '+
+     ++ "'r'nUsage:'r'n.IfDoubleClick(OnDoubleClick[, OnSingleClick]" '+
+     ++ "[, DblClickTimeout])")
+    Quit
+EndIf
+
+Static EventHandle
+
+If(Arg(3) != "")
+    DblClickTimeout = Arg(3)
+
+If(Event.Exists(EventHandle)) Do
+    Event.Destroy(EventHandle)
+    EventHandle = ""
+    Do(Arg(1), "")
+Else
+    EventHandle = Event.CreateMS(DblClickTimeout, 1, Arg(2))
+EndIf
