@@ -1,8 +1,8 @@
 ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
 IfDoubleClick
 ¯¯¯¯¯¯¯¯¯¯¯¯¯
-Version 2.1
-Sunday, 21 September 2003
+Version 2.2
+Tuesday, 5 October 2004
 ________________________________________________________________________
 
 What?
@@ -26,17 +26,14 @@ ________________________________________________________________________
 
 Requirements
 ¯¯¯¯¯¯¯¯¯¯¯¯
-The ‘Use quote ' for escape in expression strings’ checkbox, found under
-Setup > Advanced Setup > Characters, must be ticked for the script to
-work. This option is not ticked by default.
-
-This script also uses the Events plugin (included with PowerPro).
+This script uses features found only in PowerPro versions v4.1 and
+above.
 ________________________________________________________________________
 
 Installation
 ¯¯¯¯¯¯¯¯¯¯¯¯
-Extract the IfDoubleClick.txt file, into your Scripts folder (generally
-C:\Program Files\PowerPro\Scripts).
+Extract IfDoubleClick.PowerPro to your Scripts folder, e.g.:
+C:\Program Files\PowerPro\Scripts\ColourSpy.PowerPro
 ________________________________________________________________________
 
 Usage
@@ -59,10 +56,6 @@ etc. to perform that command, and then ignore any accidental double-
 click that follows (technically, any second click within DblClickTimeout
 of the first click, or 500 milliseconds by default).
 
-The default time for the double-click timeout can be modified if you
-prefer a faster or slower timeout. This is done by modifying the line in
-the script itself, that defines the DblClickTimeout variable.
-
 For example, to set up the Win+C key combination to be able to launch
 either Calculator or the Command Prompt, you could assign this command
 to the key combination in your Key/Mouse settings:
@@ -72,6 +65,11 @@ to the key combination in your Key/Mouse settings:
 Then, after saving your configuration, you will be able to use the Win+C
 combination to launch Calculator, and Win+CC to launch the Command
 Prompt. (This is actually a combination I use!)
+
+The default time for the double-click timeout can be modified if you
+prefer a faster or slower timeout and don't wish to explicitly specify
+it each time. This is done by modifying the line that defines the
+DblClickTimeout variable in the script.
 ________________________________________________________________________
 
 To Conclude
@@ -95,30 +93,34 @@ ________________________________________________________________________
 
 Version History
 ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+v2.2 (5/10/2004)
+*  The script no longer conforms to Standard Configuration and should
+   now function without modification on any PowerPro v4.1 configuration
+
 v2.1 (21/9/2003)
-* Script:
-  * The script no longer references its filename, so the script file can
-    now be renamed without problems
-  * Small optimisation to the way the event is killed
-* Documentation:
-  * Added Win+C and Win+CC examples
+*  Script:
+   *  The script no longer references its filename, so the script file
+      can now be renamed without problems
+   *  Small optimisation to the way the event is killed
+*  Documentation:
+   *  Added Win+C and Win+CC examples
 
 v2.0 (10/9/2003)
-* Script:
-  * Complete rewrite
-  * Added accidental double-click detection
-  * Global variables are no longer created or modified
-* Explanatory message box:
-  * Entered complete usage information
-* Documentation:
-  * Removed my Little Story :-)
-  * Added requirement note regarding option in Advanced Setup
+*  Script:
+   *  Complete rewrite
+   *  Added accidental double-click detection
+   *  Global variables are no longer created or modified
+*  Explanatory message box:
+   *  Entered complete usage information
+*  Documentation:
+   *  Removed my Little Story :-)
+   *  Added requirement note regarding option in Advanced Setup
 
 v1.1 (20/8/2003)
-* Explanatory message box:
-  * Added title
-  * Corrected typo
+*  Explanatory message box:
+   *  Added title
+   *  Corrected typo
 
 v1.0 (19/8/2003)
-* Initial Release
+*  Initial release
 ________________________________________________________________________
