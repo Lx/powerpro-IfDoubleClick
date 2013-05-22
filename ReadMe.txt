@@ -33,7 +33,7 @@ ________________________________________________________________________
 Installation
 ¯¯¯¯¯¯¯¯¯¯¯¯
 Extract IfDoubleClick.PowerPro to your Scripts folder, e.g.:
-C:\Program Files\PowerPro\Scripts\ColourSpy.PowerPro
+C:\Program Files\PowerPro\Scripts\IfDoubleClick.PowerPro
 ________________________________________________________________________
 
 Usage
